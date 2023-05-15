@@ -30,10 +30,13 @@ const ulTag = (
 );
 
 const Navbar = () => {
-  const [toggleMenu, setToggleMenu] = useState(false);
+  const [toggleMenu, setToggleMenu] = useState(() => {
+    return false;
+  });
   const onClickHandler = () => {
-    setToggleMenu(!toggleMenu);
-    console.log("hello");
+    setToggleMenu((prevState) => {
+      return !prevState;
+    });
   };
 
   return (
